@@ -1,8 +1,10 @@
+---
 layout: page
 title: "AWS Setup"
 permalink: /aws/
+---
 
-Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off,  let’s talk about what AWS s3 is. 
+Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off,  let’s talk about what AWS s3 is.  
 Essentially, s3 is a system designed by Amazon web services to host your data and allow people all over the world to download it to their computers! How is this different than any other download button on the internet, you may ask? With AWS s3, once you have downloaded the files for the first time, you are able to ‘update’ your local download folder with new information without having to download the entire set over and over again (with the sync command)! So, while that first download may seem overwhelming, the following downloads will be much quicker!
 In order to keep the system from being misused, SafeGraph has opted to add 3 credentials to the s3 bucket:
 - Access Key
@@ -11,7 +13,8 @@ In order to keep the system from being misused, SafeGraph has opted to add 3 cre
 
 When you run the first command `aws configure - -profile safegraph`, you are telling your computer to create a profile name with the aforementioned credentials added to them. Think of it like giving a roommate a key to your house – anyone with the key can get inside. Now, with that same analogy in mind, SafeGraph changes the ‘locks to the house’ once a week, which means you have to create a new key on a weekly basis. To do so, you simply run the `aws configure - -profile safegraph` command again to give yourself a new key!
 
-Okay, so you are halfway there! The s3 bucket is set up like a minicomputer with files stored all over the place! To access those files, you need to tell s3 2 things 1) Where to get the information and 2) where to put it on your computer. In the documentation linked above, you will find a command that looks like this `aws s3 sync s3://sq-c19-response/monthly-patterns/ ./mylocaldirectory/ - -profilesafegraph`. So, lets break this down. You are telling your computer to find the folder in the s3 bucketcalled monthly-patterns and download it to a new folder on your computer called 'mylocaldirectory'(the '/'  at the end tells it to make a directory if one doesn’t exist). If you use the command line above, this will create a new folder under c://Users/{your_name}/mylocaldirectory. An easy way to find that spot is to just do a search for ‘mylocaldirectory’ in your search bar or do a search for 'monthly-patterns'. If you wish to change where the information is stored on your computer, you just need to add that path where './mylocaldirectory/' is located.
+Okay, so you are halfway there! The s3 bucket is set up like a minicomputer with files stored all over the place! To access those files, you need to tell s3 2 things 1) Where to get the information and 2) where to put it on your computer. In the documentation linked above, you will find a command that looks like this ```aws s3 sync s3://sq-c19-response/monthly-patterns/ ./mylocaldirectory/ - -profilesafegraph```.  
+So, lets break this down. You are telling your computer to find the folder in the s3 bucketcalled monthly-patterns and download it to a new folder on your computer called 'mylocaldirectory'(the '/'  at the end tells it to make a directory if one doesn’t exist). If you use the command line above, this will create a new folder under ```c://Users/{your_name}/mylocaldirectory```. An easy way to find that spot is to just do a search for ‘mylocaldirectory’ in your search bar or do a search for 'monthly-patterns'. If you wish to change where the information is stored on your computer, you just need to add that path where ```./mylocaldirectory/``` is located.
 
 If you wish to change what data you are pulling, you can find a comprehensive list of endpoints [HERE](https://docs.google.com/spreadsheets/d/1UNWvPzkUTTlXBZ6M6iGhM_7sr8h-MxsZdE7iOszkAmk/edit#gid=0). On the far right column you will see a label 'AWS s3 path' – you can copy that and replace the information where you see "s3://sq-c19-response/monthly-patterns/" above. 
 

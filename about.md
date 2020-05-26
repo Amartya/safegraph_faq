@@ -4,15 +4,9 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# SafeGraph COVID-19 Data Consortium #
+SafeGraph is providing free access to our various datasets to help researchers, non-profits, and governments around the world with response to COVID-19 (Coronavirus). So far, 1,000+ organizations like the CDC are already in the consortium and are using SafeGraph and partner company datasets at no-cost. The data includes aggregated and anonymized datasets on social distancing and foot traffic to businesses. More details on the datasets here.  
+‍
+We are also enlisting the help of builders of any kind - engineers, data scientists, product managers, analysts - to assist teams that need help in creating insights on top of these datasets.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+[Get in touch with us](https://www.safegraph.com/covid-19-data-consortium)
