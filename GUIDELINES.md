@@ -2,7 +2,6 @@
 layout: page
 title: "Guidelines"
 permalink: /guidelines/
-navigation_weight: 2
 ---
 # Community Guidelines & Best Practices #
 

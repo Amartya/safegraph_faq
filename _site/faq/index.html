@@ -28,7 +28,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/safegraph_faq/guidelines/">Guidelines</a><a class="page-link" href="/safegraph_faq/aws/">AWS Setup</a><a class="page-link" href="/safegraph_faq/faq/">FAQ</a><a class="page-link" href="/safegraph_faq/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/safegraph_faq/faq/">FAQ</a><a class="page-link" href="/safegraph_faq/aws/">AWS Setup</a><a class="page-link" href="/safegraph_faq/guidelines/">Guidelines</a><a class="page-link" href="/safegraph_faq/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -40,90 +40,192 @@
   </header>
 
   <div class="post-content">
-    <p>In the FAQ, there are many links to Slack threads that exist in the consortium, if you click that link it takes you to another page and asks you to open Slack – accept the prompt and you will be taken to where the question is answered!</p>
+    <h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li>
+    <p><a href="#T1">How can I download the data</a>?</p>
+  </li>
+  <li>
+    <p><a href="#T2">I’m trying to open the data in excel, and it is too large or too big. What can I do?</a></p>
+  </li>
+  <li>
+    <p><a href="#T3">How can I get SafeGraph Geometry data – it is not in the s3://sg-c19-response bucket?</a></p>
+  </li>
+  <li>
+    <p><a href="#T4">Why is the schema different for Social Distancing Metrics for the dates 2020-01-01 through 2020-05-09 compared to before and after?</a></p>
+  </li>
+  <li>
+    <p><a href="#T5">I want to reproduce SafeGraph’s Patterns foot-traffic and Re-opening dashboards. Can I download this data directly? If not, how can I reproduce these charts?</a></p>
+  </li>
+  <li>
+    <p><a href="#T6">I want to reproduce SafeGraph’s Social Distancing Shelter-in-place Stay-at-home dashboard. Can I download this data directly? If not, how can I reproduce these charts?</a></p>
+  </li>
+  <li>
+    <p><a href="#T7">I am publishing using SafeGraph data. How should I cite or attribute SafeGraph?</a></p>
+  </li>
+  <li>
+    <p><a href="#T8">I am publishing using SafeGraph data. Is it OK for me to make the data publicly available so that other researchers can reproduce my research?</a></p>
+  </li>
+  <li>
+    <p><a href="#T9">How can I join together (connect, crosswalk, link) data from CBG (census block group), zip codes / postal codes, census tracts, states, counties, or other SafeGraph POI places data?</a></p>
+  </li>
+  <li>
+    <p><a href="#T10">I see an anomaly, outlier, inconsistency, or unexpected value in the data. What should I do?
+The data is broken up into many files. How can I combine all the data into one file?</a></p>
+  </li>
+  <li>
+    <p><a href="#T11">The data is broken up into many files. How can I combine all the data into one file?</a></p>
+  </li>
+  <li>
+    <p><a href="#T12">What is a geohash?</a></p>
+  </li>
+  <li>
+    <p><a href="#T13">What information is available about the SafeGraph data sample / panel? Is it representative or does it have biases?</a></p>
+  </li>
+  <li>
+    <p><a href="#T14">The dataset (sample, panel) changes month to month and week to week. How do I account for this in my longitudinal analysis?</a></p>
+  </li>
+</ol>
 
-<blockquote>
-  <p>How do I attribute SafeGraph in a publication?</p>
-</blockquote>
+<hr />
 
-<p>Add: “SafeGraph, a data company that aggregates anonymized location data from numerous applications in order to provide insights about physical places. To enhance privacy, SafeGraph excludes census block group information if fewer than five devices visited an establishment in a month from a given census block group.”</p>
-
-<blockquote>
-  <p>What if I need to link the datasets?</p>
-</blockquote>
-
+<h3 id="-how-can-i-download-the-data"><a name="T1"></a> How can I download the data?</h3>
 <ul>
-  <li>Please provide links to our documentation for whichever dataset you are referencing<br />
-<strong>Social Distancing Metrics</strong> - https://docs.safegraph.com/docs/social-distancing-metrics<br />
-<strong>Weekly Patterns</strong> - https://docs.safegraph.com/docs/weekly-patterns<br />
-<strong>Places</strong> - https://docs.safegraph.com/docs/places-schema</li>
+  <li>The primary recommendation is to download the data from AWS s3 using the aws-cli. <a href="https://docs.google.com/spreadsheets/d/1UNWvPzkUTTlXBZ6M6iGhM_7sr8h-MxsZdE7iOszkAmk/edit?usp=sharing">This spreadsheet</a> lists all of the data available and these are the instructions for <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1585177965017700">downloading using the AWS</a>.
+    <ul>
+      <li>If you have questions, ask in <a href="https://safegraphcovid19.slack.com/archives/C0114D7SJCF/p1590522731391100">#aws-troubleshooting</a></li>
+    </ul>
+  </li>
+  <li>If you want access to bulk data but are not comfortable with the AWS-CLI or terminal, you can consider using <a href="https://safegraphcovid19.slack.com/archives/C0114D7SJCF/p1590522731391100">CloudBerry Explorer</a>, a free 3rd-party software program to download data from s3. Here are <a href="https://docs.google.com/document/d/1R-EvZEWPATwH67hXyrczAK16dpCoJnOuMm4WeXUuQFI/edit?usp=sharing">instructions for using CloudBerry Explorer</a>.
+    <ul>
+      <li>If you have questions, ask in <a href="https://safegraphcovid19.slack.com/archives/C0114D7SJCF/p1590522731391100">#aws-troubleshooting</a></li>
+    </ul>
+  </li>
+  <li>If you only need a small cut of data, for example, only a specific geography or a specific time range, you can filter and download the data using one of the Consortium Partner Applications:
+    <ul>
+      <li><a href="https://safegraphcovid19.slack.com/archives/C0115PHMGM6/p1590009745120200?thread_ts=1589999350.116900&amp;cid=C0115PHMGM6">Unfolded</a>  – questions @Sina [Unfolded]</li>
+      <li><a href="https://safegraphcovid19.slack.com/archives/C0115PHMGM6/p1590010873123300">Rill Data</a>  – questions contact @Mike Driscoll (Rill Data)</li>
+    </ul>
+  </li>
 </ul>
 
-<blockquote>
-  <p>The dataset is too big! I cannot open it in Excel, what do I do?</p>
-</blockquote>
-
+<h3 id="-im-trying-to-open-the-data-in-excel-and-it-is-too-large-or-too-big-what-can-i-do"><a name="T2"></a> I’m trying to open the data in excel, and it is too large or too big. What can I do?</h3>
 <ul>
-  <li>You are not alone :), check out <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1588201121330700">this link on Slack</a></li>
+  <li>Check out <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1588201121330700">this link on Slack</a></li>
+  <li><a href="https://www.csvexplorer.com/blog/open-big-csv/">How to open really large CSV files</a></li>
 </ul>
 
-<blockquote>
-  <p>I am working with Python Pandas, how do I combine it all into 1 spot?</p>
-</blockquote>
-
+<h3 id="-how-can-i-get-safegraph-geometry-data--it-is-not-in-the-s3sg-c19-response-bucket"><a name="T3"></a> How can I get SafeGraph Geometry data – it is not in the s3://sg-c19-response bucket?</h3>
 <ul>
-  <li>Please check out <a href="https://safegraphcovid19.slack.com/archives/C010W1T8NF2/p1588295353019300?thread_ts=1587768194.419600&amp;cid=C010W1T8NF2">this link</a> OR Join the <a href="https://safegraphcovid19.slack.com/archives/C014FK2QWNL">Python Troubleshooting channel</a> for help.</li>
+  <li>SafeGraph does not make Geometry available by default to members of the Consortium.</li>
+  <li>If you want SafeGraph Geometry data in order to calculate square-footage (area) of POI or for access to <code class="language-plaintext highlighter-rouge">polygon_class</code> or <code class="language-plaintext highlighter-rouge">is_synthetic</code> columns, this is available via the <strong>Core Places Geometry Supplement (POI Area)</strong> file.</li>
+  <li>If your research requires access to additional columns, then you should download a sample of the Geometry data at SafeGraph data bar using the coupon code to confirm that Geometry data actually will help your use case. Once confirmed, please contact SafeGraph explaining your research needs, and providing the email you used to create your account on shop.safegraph.com, and we will try to enable you.</li>
 </ul>
 
-<blockquote>
-  <p>What is ‘visualize geohash’?</p>
-</blockquote>
-
+<h3 id="-why-is-the-schema-different-for-social-distancing-metrics-for-the-dates-2020-01-01-through-2020-05-09-compared-to-before-and-after"><a name="T4"></a> Why is the schema different for Social Distancing Metrics for the dates 2020-01-01 through 2020-05-09 compared to before and after?</h3>
+<p>Check out these links for more context and discussion about this via Slack:</p>
 <ul>
-  <li>Please check out <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1587590325030500?thread_ts=1587172661.363500&amp;cid=C0109NPA543">this link</a></li>
+  <li><a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1589320027227700">Social Distancing Metrics Announcement</a></li>
 </ul>
 
-<blockquote>
-  <p>I want to build a dashboard like SafeGraph! Is that data available?</p>
-</blockquote>
-
+<h3 id="-i-want-to-reproduce-safegraphs-patterns-foot-traffic-and-re-opening-dashboards-can-i-download-this-data-directly-if-not-how-can-i-reproduce-these-charts"><a name="T5"></a> I want to reproduce SafeGraph’s Patterns <a href="https://www.safegraph.com/dashboard/covid19-commerce-patterns">foot-traffic</a> and <a href="https://www.safegraph.com/dashboard/reopening-the-economy-foot-traffic?s=IA&amp;d=04-26-2020&amp;i=all">Re-opening dashboards</a>. Can I download this data directly? If not, how can I reproduce these charts?</h3>
 <ul>
-  <li>Unfortunately, that data in that exact form is not available, however, if you would like to recreate the dashboard, you can find in-depth instructions to do so <a href="https://www.safegraph.com/dashboard/covid19-commerce-patterns">HERE</a></li>
+  <li>We don’t provide this data directly, but we have detailed documentation for you to reproduce these dashboards using the <a href="https://docs.safegraph.com/docs/places-schema#section-patterns">Patterns</a> data.</li>
+  <li>Here is detailed <a href="https://docs.google.com/document/d/1lWodAzENz6rMlcFdPi6Y_B4M_ruCyXgeYoC8k9yY2eI/edit?usp=sharing">documentation to reproduce the Patterns dashboards</a>.</li>
+  <li>See here for what <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1590096693090000?thread_ts=1590096024.088700&amp;cid=C0109NPA543">NAICS codes are being used</a>.</li>
+  <li>Discussion: <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1590096024088700">from 2020-05-21</a></li>
 </ul>
 
-<blockquote>
-  <p>What kind of bias might be there in SafeGraph data?</p>
-</blockquote>
-
+<h3 id="-i-want-to-reproduce-safegraphs-social-distancing-shelter-in-place-stay-at-home-dashboard-can-i-download-this-data-directly-if-not-how-can-i-reproduce-these-charts"><a name="T6"></a> I want to reproduce SafeGraph’s <a href="https://www.safegraph.com/dashboard/covid19-shelter-in-place">Social Distancing Shelter-in-place Stay-at-home</a> dashboard. Can I download this data directly? If not, how can I reproduce these charts?</h3>
 <ul>
-  <li>Ryan from SafeGraph has an extensive write-up and discussion <a href="https://www.safegraph.com/blog/what-about-bias-in-the-safegraph-dataset">HERE</a></li>
+  <li>We don’t provide this data directly, but we have detailed documentation for you to reproduce these dashboards using the Social Distancing Metrics data available here.</li>
+  <li>Here is <a href="https://docs.google.com/document/d/1k_9LGQn95P5gHsSeuBdzgtEWGGCmzXdcOkcphWi0Cas/edit?usp=sharing">detailed documentation</a> to reproduce the Shelter-in-Place dashboards and an appendix on <a href="https://docs.google.com/document/d/1qAXl5iHJZCuyIPnawMHa6WoKULhsx404flTAGq0bStA/edit?usp=sharing">Bayesian Hierarchical Models</a>.</li>
 </ul>
 
-<blockquote>
-  <p>Is there an easier way for me to download the data?</p>
-</blockquote>
+<h3 id="-i-am-publishing-using-safegraph-data-how-should-i-cite-or-attribute-safegraph"><a name="T7"></a> I am publishing using SafeGraph data. How should I cite or attribute SafeGraph?</h3>
 
 <ul>
-  <li>Luckily, both <a href="https://safegraphcovid19.slack.com/archives/C0115PHMGM6/p1590009745120200?thread_ts=1589999350.116900&amp;cid=C0115PHMGM6">Unfolded</a> and <a href="https://safegraphcovid19.slack.com/archives/C0115PHMGM6/p1590010873123300">Rill</a> have supplied the community with alternative methods for accessing the data!</li>
+  <li>
+    <p>Add: “SafeGraph, a data company that aggregates anonymized location data from numerous applications in order to provide insights about physical places. To enhance privacy, SafeGraph excludes census block group information if fewer than five devices visited an establishment in a month from a given census block group.”</p>
+  </li>
+  <li>
+    <p><a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1585946233411800">More Context / Guidelines</a></p>
+  </li>
+  <li>
+    <p>Discussion: From <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1590101512094800">2020-5-21</a></p>
+  </li>
 </ul>
 
-<blockquote>
-  <p>What NAICS codes are used in the dashboard?</p>
-</blockquote>
+<h3 id="-i-am-publishing-using-safegraph-data-is-it-ok-for-me-to-make-the-data-publicly-available-so-that-other-researchers-can-reproduce-my-research"><a name="T8"></a> I am publishing using SafeGraph data. Is it OK for me to make the data publicly available so that other researchers can reproduce my research?</h3>
+<ul>
+  <li><a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1585946233411800">More Context / Guidelines</a></li>
+  <li>It is against our terms of service and the data evaluation agreement to re-share raw SafeGraph data. It is OK to share aggregated and derived data, and to include data in chart and visual forms.</li>
+  <li>If you need to link out to the datasets, please provide links to our documentation for whichever dataset you are referencing and refer people to SafeGraph where we can distribute the data to them directly.</li>
+</ul>
+
+<h3 id="-how-can-i-join-together-connect-crosswalk-link-data-from-cbg-census-block-group-zip-codes--postal-codes-census-tracts-states-counties-or-other-safegraph-poi-places-data"><a name="T9"></a> How can I join together (connect, crosswalk, link) data from CBG (census block group), zip codes / postal codes, census tracts, states, counties, or other SafeGraph POI places data?</h3>
+<ul>
+  <li>How to Join X to Y. <a href="https://docs.google.com/spreadsheets/d/14xMfW9xAXZLWuNcrSzxL16ddve0HAQ21zh99RAOjpsM/edit?usp=sharing">Free resources to connect together IDs, boundaries, and indexes from disparate systems</a></li>
+</ul>
+
+<h3 id="-i-see-an-anomaly-outlier-inconsistency-or-unexpected-value-in-the-data-what-should-i-do"><a name="T10"></a> I see an anomaly, outlier, inconsistency, or unexpected value in the data. What should I do?</h3>
+<ul>
+  <li>First, check the list of Known Data Issues on the eponymous tab of the <a href="https://docs.google.com/spreadsheets/d/1UNWvPzkUTTlXBZ6M6iGhM_7sr8h-MxsZdE7iOszkAmk/edit?usp=sharing">Data Products spreadsheet</a>. Others may have already reported.</li>
+  <li>If it is not already reported, then please report your observation in <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543">#safegraphdata</a>  . Please include enough details for our team to reproduce (e.g., what specific Data products (Weekly Patterns? Social Distancing Metrics?), files/dates and column names). If you can provide a visualization to indicate the issue, that is extra helpful.</li>
+  <li>We will investigate and try to provide an explanation and possibly a correction.</li>
+</ul>
+
+<h3 id="-the-data-is-broken-up-into-many-files-how-can-i-combine-all-the-data-into-one-file"><a name="T11"></a> The data is broken up into many files. How can I combine all the data into one file?</h3>
+<ul>
+  <li>The data is broken up into many files because the data is large.</li>
+  <li>Working in python? Please see this link <a href="https://safegraphcovid19.slack.com/archives/C010W1T8NF2/p1588295353019300?thread_ts=1587768194.419600&amp;cid=C010W1T8NF2">HERE</a> and join the <a href="https://safegraphcovid19.slack.com/archives/C014FK2QWNL">python_troubleshooting</a> channel for more help.</li>
+  <li>Working in R? Please join the <a href="https://safegraphcovid19.slack.com/archives/C013B8TSETG">r-troubleshooting</a> Slack channel for help.</li>
+  <li>Working in Excel? Please see <a href="#T2">I’m trying to open the data in excel, and it is too large or too big. What can I do?</a>.</li>
+</ul>
+
+<h3 id="-what-is-a-geohash"><a name="T12"></a> What is a Geohash?</h3>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Geohash">Wikipedia Link</a></li>
+  <li>If you just want to build intuition, we recommend playing with these tools:
+    <ul>
+      <li><a href="http://geohash.gofreerange.com/">geohash.gofreerange.com</a></li>
+      <li><a href="https://www.movable-type.co.uk/scripts/geohash.html">www.movable-type.co.uk</a></li>
+    </ul>
+  </li>
+  <li>Discussion:
+    <ul>
+      <li><a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1587590325030500?thread_ts=1587172661.363500&amp;cid=C0109NPA543">From Slack</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="-what-information-is-available-about-the-safegraph-data-sample--panel-is-it-representative-or-does-it-have-biases"><a name="T13"></a> What information is available about the SafeGraph data sample / panel? Is it representative or does it have biases?</h3>
+<ul>
+  <li>SafeGraph publishes several files to summarize the composition of the panel for transparency about panel composition and consistency.
+    <ul>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-home-location-distributions-by-state-census-block-group">home_panel_summary.csv</a></li>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-number-of-visits-visitors-by-state">visit_panel_summary.csv</a></li>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-normalization-stats-new">normalization_stats.csv</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.safegraph.com/blog/what-about-bias-in-the-safegraph-dataset">What about Bias in SafeGraph Dataset</a></li>
+  <li>[Data Science Sources] (https://docs.safegraph.com/docs/data-science-resources)</li>
+</ul>
+
+<h3 id="-the-dataset-sample-panel-changes-month-to-month-and-week-to-week-how-do-i-account-for-this-in-my-longitudinal-analysis"><a name="T14"></a> The dataset (sample, panel) changes month to month and week to week. How do I account for this in my longitudinal analysis?</h3>
 
 <ul>
-  <li>Please check out <a href="https://safegraphcovid19.slack.com/archives/C0109NPA543/p1590096693090000?thread_ts=1590096024.088700&amp;cid=C0109NPA543">this link</a></li>
+  <li>SafeGraph publishes several files to summarize the composition of the panel for transparency about panel composition and consistency over time.
+    <ul>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-home-location-distributions-by-state-census-block-group">home_panel_summary.csv</a></li>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-number-of-visits-visitors-by-state">visit_panel_summary.csv</a></li>
+      <li><a href="https://docs.safegraph.com/docs/places-schema#section-normalization-stats-new">normalization_stats.csv</a></li>
+    </ul>
+  </li>
+  <li>See also <a href="https://docs.safegraph.com/docs/data-science-resources">Panel Normalization for Longitudinal Analysis, Sampling Bias Corrections and Extrapolation</a>.</li>
 </ul>
 
-<blockquote>
-  <p>What is the difference between Device Count and Candidate Devices?</p>
-</blockquote>
-
-<ul>
-  <li>Please check out <a href="https://safegraphcovid19.slack.com/archives/G012RDK36G5/p1588360135003800">this link</a></li>
-</ul>
-
-<p><em>all content from Jack Lindsay’s excellent Starter Material Guide v2.</em></p>
+<p><em>FAQ content from Ryan Squire &amp; Jack Lindsay’s guides</em></p>
 
 
   </div>

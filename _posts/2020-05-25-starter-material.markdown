@@ -4,6 +4,9 @@ title:  "Starter Material | SafeGraph Data Consortium"
 date:   2020-05-25 16:44:54 -0500
 categories: 
 ---
+Swing by the [FAQ](/safegraph_faq/faq) and the [AWS](/safegraph_faq/aws/) for more details.
+
+---
 Accessing the SafeGraph data repository can be a daunting task, even for those who are used to working with big data and s3 buckets! We ask that you please review this document to better understand how the flow of information works, as well as some beginner tips for the Consortium!
 First, we invite you to explore what exactly you are looking for in the SafeGraph Consortium:
 

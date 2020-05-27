@@ -28,7 +28,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/safegraph_faq/guidelines/">Guidelines</a><a class="page-link" href="/safegraph_faq/aws/">AWS Setup</a><a class="page-link" href="/safegraph_faq/faq/">FAQ</a><a class="page-link" href="/safegraph_faq/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/safegraph_faq/faq/">FAQ</a><a class="page-link" href="/safegraph_faq/aws/">AWS Setup</a><a class="page-link" href="/safegraph_faq/guidelines/">Guidelines</a><a class="page-link" href="/safegraph_faq/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -40,7 +40,7 @@
   </header>
 
   <div class="post-content">
-    <p>Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off,  let’s talk about what AWS s3 is.<br />
+    <p>Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off, let’s talk about what AWS s3 is (<a href="#T1">only here for troubleshooting?</a>)<br />
 Essentially, s3 is a system designed by Amazon web services to host your data and allow people all over the world to download it to their computers! How is this different than any other download button on the internet, you may ask? With AWS s3, once you have downloaded the files for the first time, you are able to ‘update’ your local download folder with new information without having to download the entire set over and over again (with the sync command)! So, while that first download may seem overwhelming, the following downloads will be much quicker!
 In order to keep the system from being misused, SafeGraph has opted to add 3 credentials to the s3 bucket:</p>
 <ul>
@@ -56,7 +56,7 @@ So, lets break this down. You are telling your computer to find the folder in th
 
 <p>If you wish to change what data you are pulling, you can find a comprehensive list of endpoints <a href="https://docs.google.com/spreadsheets/d/1UNWvPzkUTTlXBZ6M6iGhM_7sr8h-MxsZdE7iOszkAmk/edit#gid=0">HERE</a>. On the far right column you will see a label ‘AWS s3 path’ – you can copy that and replace the information where you see “s3://sq-c19-response/monthly-patterns/” above.</p>
 
-<h2 id="aws-troubleshooting">AWS Troubleshooting</h2>
+<h2 id="-aws-troubleshooting"><a name="T1"></a> AWS Troubleshooting</h2>
 <p>Please note, if your concerns are not addressed here, you can submit your issues with AWS
 <a href="https://safegraphcovid19.slack.com/archives/C0114D7SJCF">HERE</a> and get personalized help!</p>
 
@@ -91,7 +91,7 @@ anything!</p>
 
 <p>This can be a few different things. First off, you should run an ‘ls’ command on the folder you are syncing to make sure the files exist in the s3 bucket. An example of an ls command is: <code class="language-plaintext highlighter-rouge">aws s3 ls s3://sg-c19-response/weekly-patterns/ -- profile safegraph</code>. This will tell you everything that is inside that folder. If you confirm that the files are in fact in the bucket/folder, and they are not on your computer, simply rerun the sync command. Sometimes partial downloads happen when too many people are hitting the folder at the same time! The good news is it will not have to redownload the other files again.</p>
 
-<p><em>all content from Jack Lindsay’s excellent Starter Material Guide v2.</em></p>
+<p><em>AWS content from Ryan Squire &amp; Jack Lindsay’s guides</em></p>
 
   </div>
 

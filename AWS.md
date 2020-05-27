@@ -2,10 +2,8 @@
 layout: page
 title: "AWS Setup"
 permalink: /aws/
-navigation_weight: 3
 ---
-
-Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off,  let’s talk about what AWS s3 is.  
+Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off, let’s talk about what AWS s3 is ([only here for troubleshooting?](#T1))  
 Essentially, s3 is a system designed by Amazon web services to host your data and allow people all over the world to download it to their computers! How is this different than any other download button on the internet, you may ask? With AWS s3, once you have downloaded the files for the first time, you are able to ‘update’ your local download folder with new information without having to download the entire set over and over again (with the sync command)! So, while that first download may seem overwhelming, the following downloads will be much quicker!
 In order to keep the system from being misused, SafeGraph has opted to add 3 credentials to the s3 bucket:
 - Access Key
@@ -19,7 +17,7 @@ So, lets break this down. You are telling your computer to find the folder in th
 
 If you wish to change what data you are pulling, you can find a comprehensive list of endpoints [HERE](https://docs.google.com/spreadsheets/d/1UNWvPzkUTTlXBZ6M6iGhM_7sr8h-MxsZdE7iOszkAmk/edit#gid=0). On the far right column you will see a label 'AWS s3 path' – you can copy that and replace the information where you see "s3://sq-c19-response/monthly-patterns/" above. 
 
-## AWS Troubleshooting ##
+## <a name="T1"/> AWS Troubleshooting ##
 Please note, if your concerns are not addressed here, you can submit your issues with AWS
 [HERE](https://safegraphcovid19.slack.com/archives/C0114D7SJCF) and get personalized help!
 
@@ -46,4 +44,4 @@ This can be a few different things. First off, you should run an ‘ls’ comman
 
 
 
-*all content from Jack Lindsay's excellent Starter Material Guide v2.*
+*AWS content from Ryan Squire & Jack Lindsay's guides*

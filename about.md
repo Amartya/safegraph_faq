@@ -2,7 +2,6 @@
 layout: page
 title: About
 permalink: /about/
-navigation_weight: 5
 ---
 
 # SafeGraph COVID-19 Data Consortium #
