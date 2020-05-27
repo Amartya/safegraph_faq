@@ -12,10 +12,10 @@ permalink: /guidelines/
   - Favorite data tools (e.g. python, STATA, excel)
   - Personal website
 - Post your questions in public channels so everyone can learn together: 
-  - Questions about SafeGraph data → #safegraphdata
-  - Questions about AWS, AWS CLI, or problems downloading data → #aws-troubleshooting
-  - Questions about other non-SafeGraph datasets → #datasets
-  - Questions about technical issues → #icanhelp, #tools, or other specialty channels like #safegraph_in_stata
+  - Questions about SafeGraph data → [#safegraphdata](https://safegraphcovid19.slack.com/archives/C0109NPA543)
+  - Questions about AWS, AWS CLI, or problems downloading data → [#aws-troubleshooting](https://safegraphcovid19.slack.com/archives/C0114D7SJCF)
+  - Questions about other non-SafeGraph datasets → [#datasets](https://safegraphcovid19.slack.com/archives/C0129PCEAKB)
+  - Questions about technical issues → [#icanhelp](https://safegraphcovid19.slack.com/archives/C010W1T8NF2), [#tools](https://safegraphcovid19.slack.com/archives/C0115PHMGM6), or other specialty channels like [#safegraph_in_stata](https://safegraphcovid19.slack.com/archives/C011WTUUQLB)
 Do not send private messages unless there is a specific reason the information cannot or should not be shared with the community. Examples: reporting abuse. 
 - Please use threads and respond in threads when possible to help organize discussion. 
 - Please do not post in #announcements or use @channel or @here. These actions are reserved for Community moderators to help maintain clear communication when needed. 
