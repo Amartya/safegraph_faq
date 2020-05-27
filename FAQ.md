@@ -2,6 +2,7 @@
 layout: page
 title: "FAQ"
 permalink: /faq/
+navigation_weight: 4
 ---
 
 In the FAQ, there are many links to Slack threads that exist in the consortium, if you click that link it takes you to another page and asks you to open Slack – accept the prompt and you will be taken to where the question is answered!

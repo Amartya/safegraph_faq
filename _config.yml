@@ -14,7 +14,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SafeGraph FAQ
-email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is a collection of FAQs and tip-and-tricks to work with SafeGraph's data as a member of the SafeGraph consortium
 baseurl: "/safegraph_faq" # the subpath of your site, e.g. /blog
@@ -26,6 +25,11 @@ theme: minima
 plugins:
   - jekyll-feed
 
+header_pages:
+ - GUIDELINES.md 
+ - AWS.md
+ - FAQ.md
+ - about.md
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

@@ -2,6 +2,7 @@
 layout: page
 title: "Guidelines"
 permalink: /guidelines/
+navigation_weight: 2
 ---
 # Community Guidelines & Best Practices #
 
@@ -15,7 +16,7 @@ permalink: /guidelines/
   - Questions about SafeGraph data → #safegraphdata
   - Questions about AWS, AWS CLI, or problems downloading data → #aws-troubleshooting
   - Questions about other non-SafeGraph datasets → #datasets
-  - Questions about technical issues → #icanhelp, #tools, or other specialty channels like #saferaph_in_stata
+  - Questions about technical issues → #icanhelp, #tools, or other specialty channels like #safegraph_in_stata
 Do not send private messages unless there is a specific reason the information cannot or should not be shared with the community. Examples: reporting abuse. 
 - Please use threads and respond in threads when possible to help organize discussion. 
 - Please do not post in #announcements or use @channel or @here. These actions are reserved for Community moderators to help maintain clear communication when needed. 

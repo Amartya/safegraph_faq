@@ -18,6 +18,7 @@ The link above will ask you to open slack – click ‘open’ and you will be t
 # Review Research #
 Perhaps you are interested in the Consortium to keep up with what all research is coming out of the data provided by SafeGraph! You can view the research as it is posted in the [Research Channel](https://safegraphcovid19.slack.com/archives/C0114RJA0BW). This channel is a place for anyone who is using SafeGraph data to show the world what they are doing, as well as get valuable feedback from the community!
 
+
 # I want to Help #
 If you are looking to help in any way possible, first off, we thank you for your interest in aiding the community! Secondly, we would ask that you hop into the [General Channel](https://safegraphcovid19.slack.com/archives/C01080G2TD0) and let everyone know who you are and how you can help! If you have a specific field you are interested in, you can ping one of the admins in the Slack group to help pair you up!
 

@@ -2,6 +2,7 @@
 layout: page
 title: "AWS Setup"
 permalink: /aws/
+navigation_weight: 3
 ---
 
 Once you have made it through the initial onboarding and decided what you want/need from the consortium, now you are trying to get into the data and do some real work! First off,  let’s talk about what AWS s3 is.  
